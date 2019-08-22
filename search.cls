@@ -7,7 +7,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
-OOption Explicit '絶対変数宣言してね！って意味
+Option Explicit '絶対変数宣言してね！って意味
 Private Const BM_TABLE_SIZE = 98305
 'アスキーコード範囲:-32768 ? 65536
 'アスキーコード範囲（変換後）0 ? 98305
