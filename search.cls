@@ -7,36 +7,36 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
-Option Explicit 
+OOption Explicit 'â‘Î•Ï”éŒ¾‚µ‚Ä‚ËI‚Á‚ÄˆÓ–¡
 Private Const BM_TABLE_SIZE = 98305
-'ã‚¢ã‚¹ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰ç¯„å›²:-32768 ã€œ 65536
-'ã‚¢ã‚¹ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰ç¯„å›²ï¼ˆå¤‰æ›å¾Œï¼‰0 ã€œ 98305
+'ƒAƒXƒL[ƒR[ƒh”ÍˆÍ:-32768 ? 65536
+'ƒAƒXƒL[ƒR[ƒh”ÍˆÍi•ÏŠ·Œãj0 ? 98305
 Private text() As String
 Private pattern() As String
 Private cp As Integer
-Private Sub Class_Initialize() ' åˆæœŸåŒ–å‡¦ç†
+Private Sub Class_Initialize() ' ‰Šú‰»ˆ—
 
-    Debug.Print "Seraché–‹å§‹"
+    Debug.Print "SerachŠJn"
     
 End Sub
-Private Sub Class_Terminate() ' çµ‚äº†æ™‚å‡¦ç†
+Private Sub Class_Terminate() ' I—¹ˆ—
 
     Erase text
     Erase pattern
     cp = 0
-    Debug.Print "Seraché–‹å§‹çµ‚äº†"
+    Debug.Print "SerachŠJnI—¹"
     
 End Sub
 Public Function search_main(ByVal txt As String, ByVal patt As String) As Integer
 
     text = split(txt)
     pattern = split(patt)
-    cp = BM_SEARCH(text, pattern) 'åˆ¤å®š
+    cp = BM_SEARCH(text, pattern) '”»’è
 
     If cp = 0 Then
         Debug.Print "Not found"
     Else
-        Debug.Print "found!!!! " + CStr(cp) + "æ–‡å­—ç›®ã‹ã‚‰"; CStr(cp + UBound(pattern)) + "æ–‡å­—ç›®ã®é–“ã«ã‚ã‚Šã¾ã™ã€‚"
+        Debug.Print "found!!!! " + CStr(cp) + "•¶š–Ú‚©‚ç"; CStr(cp + UBound(pattern)) + "•¶š–Ú‚ÌŠÔ‚É‚ ‚è‚Ü‚·B"
     End If
 
     search_main = cp
@@ -49,7 +49,7 @@ Private Function split(ByVal target As String) As String()
     Dim i As Long
     
     If target = "" Then
-       MsgBox "ãƒ†ã‚­ã‚¹ãƒˆãŒå…¥åŠ›ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚"
+       MsgBox "ƒeƒLƒXƒg‚ª“ü—Í‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB"
        End
     Else
        txt = target
@@ -67,7 +67,7 @@ Private Function bm_table_init(ByRef table() As Long, ByRef pattern() As String,
 
     Dim ptn_sp() As String
     Dim i As Long
-    ptn_len = UBound(pattern) + 1 'æ–‡å­—åˆ—ã®é•·ã•
+    ptn_len = UBound(pattern) + 1 '•¶š—ñ‚Ì’·‚³
     
     
     ReDim table(BM_TABLE_SIZE)
@@ -80,8 +80,8 @@ Private Function bm_table_init(ByRef table() As Long, ByRef pattern() As String,
         table(con_num(pattern(i))) = ptn_len - i - 1
     Next i
     
-    'ãƒ‡ãƒãƒƒã‚°ç”¨
-    Debug.Print "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®Skipæ•°" + CStr(ptn_len)
+    'ƒfƒoƒbƒO—p
+    Debug.Print "ƒfƒtƒHƒ‹ƒg‚ÌSkip”" + CStr(ptn_len)
     
     For i = 0 To BM_TABLE_SIZE
         If Not table(i) = ptn_len Then
@@ -99,8 +99,8 @@ Private Function BM_SEARCH(ByRef text() As String, ByRef pattern() As String) As
     Dim txt As String
     Dim txt_len As Integer
     Dim ptn_len As Integer
-    Dim i As Integer 'ãƒ†ã‚­ã‚¹ãƒˆã®æ¯”è¼ƒä½ç½®
-    Dim j As Integer 'ãƒ‘ã‚¿ãƒ¼ãƒ³ã®æ¯”è¼ƒä½ç½®
+    Dim i As Integer 'ƒeƒLƒXƒg‚Ì”äŠrˆÊ’u
+    Dim j As Integer 'ƒpƒ^[ƒ“‚Ì”äŠrˆÊ’u
     
     txt_len = UBound(text) + 1
     ptn_len = UBound(pattern) + 1
