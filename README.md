@@ -11,7 +11,7 @@ VBAでボイヤームーア法
 ## Usage
 '第一引数にテキスト、第二引数にパターン
 
-cp = ser.search_main("うぉぉぉ", "aaa")
+cp = ser.search_main("abbbbaaaassss", "aaa")
 
 cpには、検索対象のテキストの位置が数字で返ってきます。
 
