@@ -5,7 +5,7 @@ Dim ser As search
 Set ser = New search
 Dim cp As Integer
 
-'第一引数にテキスト、第二引数にパターン
-cp = ser.search_main("うぉぉぉ", "aaa")
+'隨ｬ荳蠑墓焚縺ｫ繝�繧ｭ繧ｹ繝医∫ｬｬ莠悟ｼ墓焚縺ｫ繝代ち繝ｼ繝ｳ
+cp = ser.search_main("abbbbaaaassss", "aaa")
 
 End Sub
